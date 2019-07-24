@@ -7,11 +7,7 @@ SPACEX_LAST_LAUNCH_URL = "https://api.spacexdata.com/v3/launches/latest"
 
 
 def create_images_folder(images_dir_name):
-    if not os.path.exists(images_dir_name):
-        try:
-            os.makedirs(images_dir_name)
-        except FileExistsError:
-            pass
+    os.makedirs(images_dir_name, exist_ok=True)
     return
 
 
