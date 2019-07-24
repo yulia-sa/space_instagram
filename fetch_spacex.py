@@ -6,11 +6,6 @@ IMAGES_DIR_NAME = "images"
 SPACEX_LAST_LAUNCH_URL = "https://api.spacexdata.com/v3/launches/latest"
 
 
-def create_images_folder(images_dir_name):
-    os.makedirs(images_dir_name, exist_ok=True)
-    return
-
-
 def fetch_spacex_last_launch(images_dir_name, spacex_last_launch_url):
     image_name = "spacex{}.jpg"
     image_path = os.path.join(images_dir_name, image_name)
@@ -38,7 +33,7 @@ def fetch_spacex_last_launch(images_dir_name, spacex_last_launch_url):
 
 
 def main():
-    create_images_folder(IMAGES_DIR_NAME)
+    os.makedirs(IMAGES_DIR_NAME, exist_ok=True)
     fetch_spacex_last_launch(IMAGES_DIR_NAME, SPACEX_LAST_LAUNCH_URL)
 
 

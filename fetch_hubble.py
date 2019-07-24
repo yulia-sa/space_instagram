@@ -1,4 +1,3 @@
-from fetch_spacex import create_images_folder
 import os
 import requests
 
@@ -53,7 +52,7 @@ def download_from_collection(collection_url):
 
 
 def main():
-    create_images_folder(IMAGES_DIR_NAME)
+    os.makedirs(IMAGES_DIR_NAME, exist_ok=True)
 
     collection_images = download_from_collection(HUBBLE_COLLECTION_URL)
 
